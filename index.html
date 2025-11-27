@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Password Strength Checker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Decorative bubbles -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <!-- Sparkle effects -->
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <h1>Password Strength Checker</h1>
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" id="password-input" class="password-input" placeholder="Enter your password...">
+                <button class="toggle-password" id="toggle-password">
+                    <i class="fas fa-eye"></i>
+                </button>
+            </div>
+            
+            <div class="strength-meter">
+                <div class="strength-fill" id="strength-fill"></div>
+            </div>
+            
+            <div class="strength-info">
+                <span>Strength:</span>
+                <span id="strength-text" class="strength-value">None</span>
+                <span id="strength-score" class="strength-score">0%</span>
+            </div>
+            
+            <div class="common-warning" id="common-warning">
+                Too common! Use a stronger password.
+            </div>
+            
+            <div class="rules-panel">
+                <h3>Password Rules</h3>
+                <ul class="criteria-list">
+                    <li class="criteria-item">
+                        <span class="criteria-icon" id="length-icon">
+                            <i class="fas fa-times-circle"></i>
+                        </span>
+                        <span class="criteria-text">At least 8 characters</span>
+                    </li>
+                    <li class="criteria-item">
+                        <span class="criteria-icon" id="uppercase-icon">
+                            <i class="fas fa-times-circle"></i>
+                        </span>
+                        <span class="criteria-text">Contains uppercase letter (A-Z)</span>
+                    </li>
+                    <li class="criteria-item">
+                        <span class="criteria-icon" id="lowercase-icon">
+                            <i class="fas fa-times-circle"></i>
+                        </span>
+                        <span class="criteria-text">Contains lowercase letter (a-z)</span>
+                    </li>
+                    <li class="criteria-item">
+                        <span class="criteria-icon" id="number-icon">
+                            <i class="fas fa-times-circle"></i>
+                        </span>
+                        <span class="criteria-text">Contains number (0-9)</span>
+                    </li>
+                    <li class="criteria-item">
+                        <span class="criteria-icon" id="special-icon">
+                            <i class="fas fa-times-circle"></i>
+                        </span>
+                        <span class="criteria-text">Contains special character (!@#$%)</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="button-group">
+                <button id="generate-btn" class="btn generate-btn">
+                    <i class="fas fa-key"></i> Generate Password
+                </button>
+                <button id="copy-btn" class="btn copy-btn">
+                    <i class="fas fa-copy"></i> Copy Password
+                </button>
+            </div>
+            
+            <div class="history-section">
+                <h3>Generated Passwords</h3>
+                <ul id="history-list" class="history-list">
+                    <!-- History items will be added here dynamically -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <span id="toast-message"></span>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
